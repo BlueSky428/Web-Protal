@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <body class="bg-grey-lightest bg-cover-image bg-center h-screen">
+    <login-card class="h-full flex justify-end items-center mr-48"></login-card>
+  </body>
+
+    <!-- <div style="background-image: url('@/assets/park_1920.jpg')" class="bg-auto"> -->
+      <!-- <img class="bg-contain" src="@/assets/park_1920.jpg" alt=""> -->
+   
+    <!-- </div> -->
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import LoginCard from "@/components/LoginCard";
 
 export default {
   name: "home",
   components: {
-    HelloWorld
+    LoginCard
   }
 };
 </script>
+
+<style>
+@responsive {
+  .bg-cover-image {
+    background-image: url("../assets/park_1920_flipped.jpg");
+  }
+}
+</style>

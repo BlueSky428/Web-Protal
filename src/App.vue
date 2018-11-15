@@ -1,31 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="min-h-screen bg-white font-sans antialiased">
     <router-view/>
   </div>
 </template>
 
+<script>
+// @ is an alias to /src
+import Navbar from "@/components/Navbar";
+
+export default {
+  name: "home",
+  components: {
+    Navbar
+  }
+};
+</script>
+
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+/* https://www.npmjs.com/package/portal-vue */
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+/* @import url('./styles/main.css'); */
+/*
+    1) NPM: npm install tailwindcss --save-dev
+    2) package.json: 
+      "postcss": {
+          "plugins": {
+            "tailwindcss": "../tailwind.js",
+            "autoprefixer": {}
+          }
+        },
+    3) VS Code Terminal: ./node_modules/.bin/tailwind init tailwind.js and move to src
+    4) @tailwinds, in order, below or copy main.css and add 
+  @import url('./styles/main.css');
+    5) npm run serve
+   */
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+@import url("https://rsms.me/inter/inter-ui.css");
+@import "./less/components/Navbar.css";
 </style>
+
